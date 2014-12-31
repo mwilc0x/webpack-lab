@@ -3,7 +3,7 @@
 const $ = require('jquery');
 
 class WebApi {
-  
+
   constructor() {
 
   }
@@ -17,11 +17,11 @@ class WebApi {
 
       dataType: 'json',
 
-      success: function(data) {
+      success: (data) => {
         console.log(data)
       },
 
-      error: function(xhr, status, err) {
+      error: (xhr, status, err) => {
         console.log('Error fetching books!')
         console.error(err);
       }
