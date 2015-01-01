@@ -1,12 +1,10 @@
-'use strict';
-
-const React = require('react');
-const Utils = require('./utils/web-api')
+import React from 'react';
+import Utils from './utils/web-api';
 
 const Ruscello = React.createClass({
 
   componentDidMount() {
-    var utils = new Utils();
+    const utils = new Utils();
     utils.initData();
   },
 
@@ -18,4 +16,4 @@ const Ruscello = React.createClass({
 
 });
 
-module.exports = Ruscello;
+export default Ruscello;

@@ -1,6 +1,4 @@
-'use strict';
-
-const $ = require('jquery');
+import $ from 'jquery';
 
 class WebApi {
 
@@ -30,4 +28,4 @@ class WebApi {
 
 }
 
-module.exports = WebApi;
+export default WebApi;

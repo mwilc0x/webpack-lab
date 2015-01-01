@@ -1,6 +1,4 @@
-'use strict';
-
-const React = require('react'),
-    App = require('./app');
+import React from 'react';
+import App from './app';
 
 React.render(<App />, document.body);
