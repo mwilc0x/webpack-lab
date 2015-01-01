@@ -6,4 +6,4 @@ hello:
 	@echo "\n${WELCOME}\n"
 
 webpack:
-	@node server.js
+	@node scripts/server/server.js
