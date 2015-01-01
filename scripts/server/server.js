@@ -1,18 +1,18 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('../../webpack.config');
-var scraper = require('./modules/scraper');
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import config from '../../webpack.config';
+import utils from './modules/scraper';
+import express from 'express';
 
-var express = require('express');
-
-var api = express()
+const api = express()
   .get('/books', function(req, res) {
+    const scraper = new utils();
     scraper.scrapeNYT('http://www.nytimes.com/best-sellers-books/').then(function(data) {
       res.send(data);
     });
   });
 
-var app = express()
+const app = express()
   .all('/*', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     res.header('Access-Control-Allow-Headers', 'X-Requested-With')

@@ -1,18 +1,16 @@
-'use strict';
+import request from 'request';
+import cheerio from 'cheerio';
+import Q from 'q';
 
-var request = require('request');
-var cheerio = require('cheerio');
-var Q = require('q');
+class Utils {
 
-var Utils = {
-
-  scrapeNYT: function(url) {
-    var defer = Q.defer(),
+  scrapeNYT(url) {
+    const defer = Q.defer(),
         _this = this;
 
     request(url, function (error, response, html) {
       if (!error) {
-        var $ = cheerio.load(html),
+        const $ = cheerio.load(html),
         date = {
           prev: new Date($('#bestsellersPreviousList a span').text()).toDateString(),
           curr: new Date($('.element1 p').text()).toDateString(),
@@ -34,29 +32,30 @@ var Utils = {
     });
 
     return defer.promise;
-  },
+  }
 
-  scrapeSubPage: function(title, url, date) {
-    var data = [],
+  scrapeSubPage(title, url, date) {
+    const data = [],
     defer = Q.defer();
 
     request(url, function (error, response, html) {
       if (!error) {
-        var $ = cheerio.load(html);
-      }
-      $('table.bestSellersList tbody tr.bookDetails').each(function () {
-        data.push({
-          id: Math.floor(100000 + Math.random() * 900000),
-          index: $(this).find('td.index').text(),
-          summary: $(this).find('td.summary').text().trim()
-        });
-      });
+        const $ = cheerio.load(html);
 
-      defer.resolve({ date: date, title: title, books: data });
+        $('table.bestSellersList tbody tr.bookDetails').each(function () {
+          data.push({
+            id: Math.floor(100000 + Math.random() * 900000),
+            index: $(this).find('td.index').text(),
+            summary: $(this).find('td.summary').text().trim()
+          });
+        });
+
+        defer.resolve({ date: date, title: title, books: data });
+      }
     });
 
     return defer.promise;
   }
 }
 
-module.exports = Utils;
+export default Utils;

@@ -17,6 +17,7 @@
   "license": "MIT",
   "homepage": "https://github.com/mjw56/webpack-lab",
   "devDependencies": {
+    "6to5": "^2.4.3",
     "6to5-loader": "^1.0.0",
     "cheerio": "^0.18.0",
     "express": "^4.10.6",
