@@ -6,7 +6,7 @@ class Utils {
 
   scrapeNYT(url) {
     const defer = Q.defer(),
-        _this = this;
+        self = this;
 
     request(url, (error, response, html) => {
       if (!error) {
@@ -21,7 +21,7 @@ class Utils {
 
         $('div.bColumn div.columnGroup.first div.story').each(function (i, story) {
           if ($(this).find('h3 a').attr('href')) {
-            promises.push(_this.scrapeSubPage($(this).find('h3').text(), $(this).find('h3 a').attr('href'), date));
+            promises.push(self.scrapeSubPage($(this).find('h3').text(), $(this).find('h3 a').attr('href'), date));
           }
         });
 

@@ -1,29 +1,17 @@
 import $ from 'jquery';
+import Promise from 'es6-promise';
 
 class WebApi {
 
   constructor() {
-
+    this.promise = Promise.Promise;
   }
 
   initData() {
 
     console.log('Initiating data...')
 
-    $.ajax({
-      url: 'http://localhost:3001/api/books',
-
-      dataType: 'json',
-
-      success: (data) => {
-        console.log(data)
-      },
-
-      error: (xhr, status, err) => {
-        console.log('Error fetching books!')
-        console.error(err);
-      }
-    });
+    return this.promise.resolve($.ajax('http://localhost:3001/api/books'));
   }
 
 }
