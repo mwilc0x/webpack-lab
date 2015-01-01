@@ -8,7 +8,7 @@ class Utils {
     const defer = Q.defer(),
         _this = this;
 
-    request(url, function (error, response, html) {
+    request(url, (error, response, html) => {
       if (!error) {
         const $ = cheerio.load(html),
         date = {
@@ -25,7 +25,7 @@ class Utils {
           }
         });
 
-        Q.all(promises).then(function(data) {
+        Q.all(promises).then((data) => {
           defer.resolve(data);
         });
       }
@@ -38,7 +38,7 @@ class Utils {
     const data = [],
     defer = Q.defer();
 
-    request(url, function (error, response, html) {
+    request(url, (error, response, html) => {
       if (!error) {
         const $ = cheerio.load(html);
 

@@ -5,15 +5,15 @@ import utils from './modules/scraper';
 import express from 'express';
 
 const api = express()
-  .get('/books', function(req, res) {
+  .get('/books', (req, res) => {
     const scraper = new utils();
-    scraper.scrapeNYT('http://www.nytimes.com/best-sellers-books/').then(function(data) {
+    scraper.scrapeNYT('http://www.nytimes.com/best-sellers-books/').then((data) => {
       res.send(data);
     });
   });
 
 const app = express()
-  .all('/*', function(req, res, next) {
+  .all('/*', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     res.header('Access-Control-Allow-Headers', 'X-Requested-With')
     next()
@@ -25,7 +25,7 @@ app.use('/api', api)
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true
-}).listen(3000, '0.0.0.0', function (err, result) {
+}).listen(3000, '0.0.0.0', (err, result) => {
   if (err) {
     console.log(err);
   }
