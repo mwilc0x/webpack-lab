@@ -5,21 +5,26 @@ import BookList from './components/book-list.react';
 const Ruscello = React.createClass({
 
   getInitialState() {
-    return { lists: {} };
+    return { lists: [] };
   },
 
   componentDidMount() {
     const utils = new Utils();
     utils.initData().then((response) => {
-      console.log(response);
+      this.setState({ lists: response });
     });
   },
 
   render() {
+
+    const lists = this.state.lists.map((list, index) => {
+      return <BookList key={index} books={list.books} date={list.date} title={list.title} />
+    });
+
     return (
       <div>
         <h1>webpack lab</h1>
-        <BookList />
+        {lists}
       </div>
     );
   }
