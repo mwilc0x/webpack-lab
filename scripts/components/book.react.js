@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Book = React.createClass({
+export default React.createClass({
 
   propTypes: {
     index: React.PropTypes.string.isRequired,
@@ -12,5 +12,3 @@ const Book = React.createClass({
   }
 
 });
-
-export default Book;
