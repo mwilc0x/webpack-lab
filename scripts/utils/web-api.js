@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Promise from 'es6-promise';
 
-class WebApi {
+export default class WebApi {
 
   constructor() {
     this.promise = Promise.Promise;
@@ -15,5 +15,3 @@ class WebApi {
   }
 
 }
-
-export default WebApi;

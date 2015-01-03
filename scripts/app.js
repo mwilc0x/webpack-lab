@@ -2,14 +2,14 @@ import React from 'react';
 import Utils from './utils/web-api';
 import BookList from './components/book-list.react';
 
-const Ruscello = React.createClass({
+var App = module.exports = React.createClass({
 
   getInitialState() {
     return { lists: [] };
   },
 
   componentDidMount() {
-    const utils = new Utils();
+    let utils = new Utils();
     utils.initData().then((response) => {
       this.setState({ lists: response });
     });
@@ -24,11 +24,9 @@ const Ruscello = React.createClass({
     return (
       <div>
         <h1>webpack lab</h1>
-        {lists}
+        {!this.state.lists.length ? <h2>Loading ...</h2> : lists }
       </div>
     );
   }
 
 });
-
-export default Ruscello;
