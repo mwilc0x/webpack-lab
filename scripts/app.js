@@ -2,7 +2,7 @@ import React from 'react';
 import Utils from './utils/web-api';
 import BookList from './components/book-list.react';
 
-var App = module.exports = React.createClass({
+let App = module.exports = React.createClass({
 
   getInitialState() {
     return { lists: [] };
