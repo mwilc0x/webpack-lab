@@ -1,4 +1,4 @@
-import Flux from 'flux';
+import * as Flux from 'flux';
 import Constants from '../constants/constants';
 
 class Dispatcher extends Flux.Dispatcher {

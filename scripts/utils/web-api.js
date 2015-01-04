@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import * as $ from 'jquery';
 import { Promise } from 'es6-promise';
 import Actions from '../actions/book-actions';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Utils from './utils/web-api';
 import BookList from './components/book-list.react';
 import BookStore from './stores/book-store';
@@ -7,6 +7,10 @@ export default React.createClass({
 
   getInitialState() {
     return { lists: [] };
+  },
+
+  shouldComponentUpdate() {
+    return true;
   },
 
   componentDidMount() {

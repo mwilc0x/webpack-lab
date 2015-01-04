@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Book from './book.react';
 
 export default React.createClass({
