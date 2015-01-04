@@ -1,6 +1,7 @@
 import React from 'react';
 import Utils from './utils/web-api';
 import BookList from './components/book-list.react';
+import BookStore from './stores/book-store';
 
 export default React.createClass({
 
@@ -10,12 +11,20 @@ export default React.createClass({
 
   componentDidMount() {
     let utils = new Utils();
-    utils.initData().then((response) => {
-      this.setState({ lists: response });
-    });
+    utils.initData();
+
+    BookStore.addChangeListener(this._onChange);
   },
 
-  renderBookList(list, index) {
+  _getBooksFromStore() {
+      this.setState( { lists: BookStore.getBooks() });
+  },
+
+  _onChange() {
+    this._getBooksFromStore();
+  },
+
+  _renderBookList(list, index) {
     return <BookList
       key={index}
       books={list.books}
@@ -27,7 +36,7 @@ export default React.createClass({
     return (
       <div>
         <h1>webpack lab</h1>
-        { !this.state.lists.length ? 'Loading' : this.state.lists.map(this.renderBookList) }
+        { !this.state.lists.length ? 'Loading' : this.state.lists.map(this._renderBookList) }
       </div>
     );
   }
