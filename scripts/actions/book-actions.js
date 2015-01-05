@@ -1,7 +1,7 @@
 import Dispatcher from '../dispatcher/book-dispatcher';
 import Constants from '../constants/constants';
 
-export default class Actions {
+class Actions {
 
   receiveBooks(books) {
     Dispatcher.handleServerAction({
@@ -11,3 +11,6 @@ export default class Actions {
   }
 
 }
+
+let a = new Actions();
+export default a;
