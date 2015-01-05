@@ -6,8 +6,7 @@ import express from 'express';
 
 const api = express()
   .get('/books', (req, res) => {
-    const scraper = new utils();
-    scraper.scrapeNYT('http://www.nytimes.com/best-sellers-books/').then((data) => {
+    utils.scrapeNYT('http://www.nytimes.com/best-sellers-books/').then((data) => {
       res.send(data);
     });
   });

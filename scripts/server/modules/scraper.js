@@ -2,7 +2,7 @@ import request from 'request';
 import cheerio from 'cheerio';
 import { Promise } from 'es6-promise';
 
-export default class Utils {
+class Utils {
 
   scrapeNYT(url) {
     const self = this;
@@ -55,3 +55,6 @@ export default class Utils {
     });
   }
 }
+
+let u = new Utils();
+export default u;
