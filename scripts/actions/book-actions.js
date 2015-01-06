@@ -10,6 +10,13 @@ class Actions {
     });
   }
 
+  filterBooks(query) {
+    Dispatcher.handleViewAction({
+      type: Constants.ActionTypes.FILTER_BOOKS,
+      query: query
+    });
+  }
+
 }
 
 let a = new Actions();
