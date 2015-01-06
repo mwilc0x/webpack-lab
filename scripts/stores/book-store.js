@@ -31,6 +31,10 @@ class BookStore extends Events.EventEmitter {
     this._books = books;
   }
 
+  _filterBooks(query) {
+    console.log(query)
+  }
+
   _dispatchToken(payload) {
     let action = payload.action;
 
@@ -39,6 +43,9 @@ class BookStore extends Events.EventEmitter {
       case Constants.ActionTypes.RECEIVE_BOOKS:
         this._setBooks(action.books);
         this._emitChange();
+        break;
+      case Constants.ActionTypes.FILTER_BOOKS:
+        this._filterBooks(action.query);
         break;
 
       default:
