@@ -3,8 +3,8 @@ import Actions from '../actions/book-actions';
 
 export default React.createClass({
 
-  _filter(event) {
-    Actions.filterBooks(event.target.value.toLowerCase());
+  _search(event) {
+    Actions.search(event.target.value.toLowerCase());
   },
 
   render() {
@@ -28,7 +28,7 @@ export default React.createClass({
             <ul className="nav navbar-nav navbar-right">
               <form className="navbar-form navbar-left" role="search">
                 <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Search" onChange={this._filter} />
+                  <input type="text" className="form-control" placeholder="Search" onChange={this._search} />
                 </div>
               </form>
             </ul>

@@ -10,7 +10,7 @@ class Actions {
     });
   }
 
-  filterBooks(query) {
+  search(query) {
     Dispatcher.handleViewAction({
       type: Constants.ActionTypes.FILTER_BOOKS,
       query: query
