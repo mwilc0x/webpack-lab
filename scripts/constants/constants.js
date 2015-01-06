@@ -4,7 +4,8 @@ class Constants {
 
   constructor() {
     this.ActionTypes = KeyMirror({
-      RECEIVE_BOOKS: null
+      RECEIVE_BOOKS: null,
+      FILTER_BOOKS: null
     });
 
     this.PayloadSources = KeyMirror({
