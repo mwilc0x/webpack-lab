@@ -15,7 +15,7 @@ class Dispatcher extends Flux.Dispatcher {
     this.dispatch(payload);
   }
 
-  handleViewAction() {
+  handleViewAction(action) {
     let payload = {
       source: Constants.PayloadSources.VIEW_ACTION,
       action: action
