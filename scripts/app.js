@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Utils from './utils/web-api';
+import Header from './components/header.react';
 import BookList from './components/book-list.react';
 import BookStore from './stores/book-store';
 
@@ -38,8 +39,8 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        <h1>webpack lab</h1>
+      <div className="container">
+        <Header />
         { !this.state.lists.length ? 'Loading' : this.state.lists.map(this._renderBookList) }
       </div>
     );
