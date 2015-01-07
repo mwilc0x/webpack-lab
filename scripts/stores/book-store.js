@@ -52,8 +52,7 @@ class BookStore extends Events.EventEmitter {
     this._emitChange();
   }
 
-  _dispatchToken(payload) {
-    let action = payload.action;
+  _dispatchToken(action) {
 
     switch(action.type) {
 

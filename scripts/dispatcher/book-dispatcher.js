@@ -8,19 +8,11 @@ class Dispatcher extends Flux.Dispatcher {
   }
 
   handleServerAction(action) {
-    let payload = {
-      source: Constants.PayloadSources.SERVER_ACTION,
-      action: action
-    };
-    this.dispatch(payload);
+    this.dispatch(action);
   }
 
   handleViewAction(action) {
-    let payload = {
-      source: Constants.PayloadSources.VIEW_ACTION,
-      action: action
-    }
-    this.dispatch(payload);
+    this.dispatch(action);
   }
 
 }
