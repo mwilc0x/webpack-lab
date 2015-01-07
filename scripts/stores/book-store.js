@@ -37,11 +37,6 @@ class BookStore extends Events.EventEmitter {
   }
 
   _filterBooks(query) {
-    if(query === '') {
-      this._setBooks(this.immutable_books.toArray());
-      this._emitChange();
-      return;
-    }
 
     var filtered_lists = this.immutable_books.map((list) => {
       return {
