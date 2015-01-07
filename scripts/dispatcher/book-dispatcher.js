@@ -7,11 +7,7 @@ class Dispatcher extends Flux.Dispatcher {
     super();
   }
 
-  handleServerAction(action) {
-    this.dispatch(action);
-  }
-
-  handleViewAction(action) {
+  handleAction(action) {
     this.dispatch(action);
   }
 

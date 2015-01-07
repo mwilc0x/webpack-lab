@@ -4,14 +4,14 @@ import Constants from '../constants/constants';
 class Actions {
 
   receiveBooks(books) {
-    Dispatcher.handleServerAction({
+    Dispatcher.handleAction({
       type: Constants.ActionTypes.RECEIVE_BOOKS,
       books: books
     });
   }
 
   search(query) {
-    Dispatcher.handleViewAction({
+    Dispatcher.handleAction({
       type: Constants.ActionTypes.FILTER_BOOKS,
       query: query
     });
