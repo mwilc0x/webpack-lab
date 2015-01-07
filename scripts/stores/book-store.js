@@ -66,7 +66,7 @@ class BookStore extends Events.EventEmitter {
         break;
 
       default:
-        // do nothing
+        // no op
     }
   }
 }
