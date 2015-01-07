@@ -1,6 +1,7 @@
 import Dispatcher from '../dispatcher/book-dispatcher';
 import Constants from '../constants/constants';
 import Events from 'eventemitter3';
+import * as Immutable from 'immutable';
 
 class BookStore extends Events.EventEmitter {
 
@@ -31,8 +32,29 @@ class BookStore extends Events.EventEmitter {
     this._books = books;
   }
 
+  _setImmutableBooks(books) {
+    this.immutable_books = Immutable.List(books);
+  }
+
   _filterBooks(query) {
-    console.log(query)
+    if(query === '') {
+      this._setBooks(this.immutable_books.toArray());
+      this._emitChange();
+      return;
+    }
+
+    var filtered_lists = this.immutable_books.map((list) => {
+      return {
+        title: list.title,
+        date: list.date,
+        books: list.books.filter((book) => {
+          return book.summary.toLowerCase().indexOf(query.toLowerCase()) > -1;
+        })
+      };
+    });
+
+    this._setBooks(filtered_lists.toArray());
+    this._emitChange();
   }
 
   _dispatchToken(payload) {
@@ -41,6 +63,7 @@ class BookStore extends Events.EventEmitter {
     switch(action.type) {
 
       case Constants.ActionTypes.RECEIVE_BOOKS:
+        this._setImmutableBooks(action.books);
         this._setBooks(action.books);
         this._emitChange();
         break;
