@@ -7,7 +7,7 @@ npm install && npm start
 ```
 
 ## About
-A simple boilerplate for webpack + es6 flux + react web components
+A simple boilerplate for webpack + es6 flux + react web components + routing
 
 ## License
 MIT License
