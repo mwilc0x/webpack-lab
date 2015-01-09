@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Actions from '../actions/book-actions';
+import { Link } from 'react-router';
 
 export default React.createClass({
 
@@ -22,7 +23,7 @@ export default React.createClass({
           </div>
           <div id="navbar" className="navbar-collapse collapse">
             <ul className="nav navbar-nav">
-              <li className="active"><a href="#">Home</a></li>
+              <li className="active"><Link to="home">Home</Link></li>
               <li><a href="#">About</a></li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
