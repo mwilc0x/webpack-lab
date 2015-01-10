@@ -18,9 +18,10 @@ let App = React.createClass({
 
 });
 
-var routes = <Route handler={App}>
+let routes = <Route handler={App}>
   <DefaultRoute name="home" handler={Home}/>
 </Route>
+
 Router.run(routes, function(Handler) {
   React.render(<Handler/>, document.body)
 })
