@@ -38,8 +38,10 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        { !this.state.lists.length ? 'Loading' : this.state.lists.map(this._renderBookList) }
+      <div className="row">
+        <div className="col-md-6">
+          { !this.state.lists.length ? 'Loading' : this.state.lists.map(this._renderBookList) }
+        </div>
       </div>
     );
   }
