@@ -2,13 +2,10 @@ import * as React from 'react';
 import Actions from '../actions/book-actions';
 import { Link } from 'react-router';
 import Login from '../components/login.react';
+import Search from '../components/search.react';
 import Style from '../utils/styles';
 
 export default React.createClass({
-
-  _search(event) {
-    Actions.search(event.target.value.toLowerCase());
-  },
 
   render() {
     return (
@@ -25,13 +22,7 @@ export default React.createClass({
           </div>
           <div id="navbar" className="navbar-collapse collapse">
 
-            <ul className="nav navbar-nav">
-              <form className="navbar-form navbar-left" role="search">
-                <div className="form-group">
-                  <input type="text" className="form-control" style={Style.app.search} placeholder="Search" onChange={this._search} />
-                </div>
-              </form>
-            </ul>
+            <Search />
 
             <Login />
 
