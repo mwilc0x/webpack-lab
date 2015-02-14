@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Actions from '../actions/book-actions';
 import { Link } from 'react-router';
+import Login from '../components/login.react';
+import Style from '../utils/styles';
 
 export default React.createClass({
 
@@ -22,17 +24,17 @@ export default React.createClass({
             <a className="navbar-brand" href="#">Webpack Lab</a>
           </div>
           <div id="navbar" className="navbar-collapse collapse">
+
             <ul className="nav navbar-nav">
-              <li className="active"><Link to="home">Home</Link></li>
-              <li><a href="#">About</a></li>
-            </ul>
-            <ul className="nav navbar-nav navbar-right">
               <form className="navbar-form navbar-left" role="search">
                 <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Search" onChange={this._search} />
+                  <input type="text" className="form-control" style={Style.app.search} placeholder="Search" onChange={this._search} />
                 </div>
               </form>
             </ul>
+
+            <Login />
+
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
