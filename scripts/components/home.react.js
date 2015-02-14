@@ -2,6 +2,7 @@ import * as React from 'react';
 import Utils from '../utils/web-api';
 import BookStore from '../stores/book-store';
 import BookList from '../components/book-list.react';
+import SideNav from '../components/side-nav.react';
 
 export default React.createClass({
 
@@ -39,8 +40,11 @@ export default React.createClass({
   render() {
     return (
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-9">
           { !this.state.lists.length ? 'Loading' : this.state.lists.map(this._renderBookList) }
+        </div>
+        <div className="col-md-3">
+          <SideNav />
         </div>
       </div>
     );
