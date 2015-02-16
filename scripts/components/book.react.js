@@ -8,7 +8,7 @@ export default React.createClass({
   },
 
   render() {
-    return (<h3>{this.props.index}: {this.props.summary}</h3>);
+    return (<h4>{this.props.index}: {this.props.summary}</h4>);
   }
 
 });
