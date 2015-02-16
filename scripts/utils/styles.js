@@ -12,6 +12,14 @@ export default {
       background: '#3a5795',
       color: 'white',
       border: 'none'
+    },
+
+    inlineBlock: {
+      display: 'inline-block'
+    },
+
+    bookTitle: {
+      marginRight: '10px'
     }
 
   }
