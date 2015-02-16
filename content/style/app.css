@@ -1,0 +1,35 @@
+.example-enter.example-enter-active {
+  height 100%;
+}
+
+.example-leave.example-enter-leave {
+  height 0;
+}
+
+ .example-enter, .example-leave {
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -ms-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+
+.example-enter {
+    max-height: 0;
+    opacity: 0;
+}
+
+ .example-enter.example-enter-active {
+    max-height: 999px;
+    opacity:1;
+}
+
+ .example-leave {
+    max-height: 999px;
+    opacity:1;
+}
+
+ .example-leave.example-leave-active {
+    max-height: 0;
+    opacity:0;
+}
