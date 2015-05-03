@@ -1,4 +1,4 @@
-import * as KeyMirror from 'keymirror';
+import KeyMirror from 'keymirror';
 
 class Constants {
 
