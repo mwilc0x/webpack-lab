@@ -1,9 +1,9 @@
 import Dispatcher from '../dispatcher/book-dispatcher';
 import Constants from '../constants/constants';
-import Events from 'eventemitter3';
+import EventEmitter from 'eventemitter3';
 import * as Immutable from 'immutable';
 
-class UserStore extends Events.EventEmitter {
+class UserStore extends EventEmitter {
 
   constructor() {
     super();
@@ -44,7 +44,7 @@ class UserStore extends Events.EventEmitter {
         this._setUser(action.user);
         this._emitChange();
         break;
-        
+
       default:
         // no op
     }

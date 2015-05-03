@@ -1,9 +1,9 @@
 import Dispatcher from '../dispatcher/book-dispatcher';
 import Constants from '../constants/constants';
-import Events from 'eventemitter3';
+import EventEmitter from 'eventemitter3';
 import * as Immutable from 'immutable';
 
-class BookStore extends Events.EventEmitter {
+class BookStore extends EventEmitter {
 
   constructor() {
     super();
