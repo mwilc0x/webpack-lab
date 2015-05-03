@@ -1,8 +1,8 @@
-import webpack from 'webpack';
+var webpack = require('webpack');
 import WebpackDevServer from 'webpack-dev-server';
 import config from '../../webpack.config';
 import utils from './modules/scraper';
-import express from 'express';
+var express = require('express');
 
 const api = express()
   .get('/books', (req, res) => {
