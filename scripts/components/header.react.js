@@ -26,8 +26,8 @@ export default React.createClass({
 
             <Login />
 
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
+          </div>
+        </div>
       </nav>
     );
   }
