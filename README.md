@@ -1,4 +1,6 @@
 [![dependency status](https://img.shields.io/david/mjw56/webpack-lab.svg)](https://david-dm.org/mjw56/webpack-lab)
+[![devDependency status](https://david-dm.org/mjw56/webpack-lab/dev-status.png)](https://david-dm.org/mjw56/webpack-lab#info=devDependencies)
+
 
 webpack-lab
 ========
