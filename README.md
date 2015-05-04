@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/mjw56/webpack-lab.svg?branch=master)](https://travis-ci.org/mjw56/webpack-lab)
 [![dependency status](https://img.shields.io/david/mjw56/webpack-lab.svg)](https://david-dm.org/mjw56/webpack-lab)
 [![devDependency Status](https://david-dm.org/mjw56/webpack-lab/dev-status.svg)](https://david-dm.org/mjw56/webpack-lab#info=devDependencies)
 
